@@ -1,11 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = createProps;
-function createProps(propTypes, props, classNames) {
-  var newProps = {};
+export default function createProps(propTypes, props, classNames) {
+  const newProps = {};
 
   Object.keys(props).filter(function (key) {
     return key === 'children' || !propTypes[key];
