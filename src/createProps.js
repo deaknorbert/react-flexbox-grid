@@ -1,10 +1,20 @@
-export default function createProps(propTypes, props, classNames) {
-  const newProps = {};
+'use strict';
 
-  Object.keys(props)
-    .filter(key => (key === 'children' || !propTypes[key]))
-    .forEach(key => (newProps[key] = props[key]));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = createProps;
+function createProps(propTypes, props, classNames) {
+  var newProps = {};
 
-  const className = classNames.filter(cn => cn).join(' ');
-  return Object.assign({}, newProps, { className });
+  Object.keys(props).filter(function (key) {
+    return key === 'children' || !propTypes[key];
+  }).forEach(function (key) {
+    return newProps[key] = props[key];
+  });
+
+  var className = classNames.filter(function (cn) {
+    return cn;
+  }).join(' ');
+  return Object.assign({}, newProps, { className: className });
 }
